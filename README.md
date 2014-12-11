@@ -14,9 +14,7 @@ Tutorial angualar js template
 ## Development
 - grunt
 
-command line for git
-==================
-
+## Command line for git
   - git add -A (file is modified and new file)
   - git add -U (file is modified)
   - git add home.html (add file)
