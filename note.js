@@ -1,4 +1,4 @@
-// INIT: Password match
+// INIT: Password match push test
 if($globalPassword.length){
     $globalPassword.on('change', function(){
         var strPasswordComfirm = $globalPasswordConfirm.val();
