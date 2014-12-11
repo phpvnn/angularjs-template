@@ -17,10 +17,10 @@ Tutorial angualar js template
 command line for git
 ==================
 
-git add -A (file is modified and new file)
-git add -U (file is modified)
-git add home.html (add file)
-git add folder/* (add folder)
-git commit -m "comment"
-git pull origin tenbrand
-git push origin ten
+  - git add -A (file is modified and new file)
+  - git add -U (file is modified)
+  - git add home.html (add file)
+  - git add folder/* (add folder)
+  - git commit -m "comment"
+  - git pull origin tenbrand
+  - git push origin ten
