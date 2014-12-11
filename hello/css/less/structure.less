@@ -1,0 +1,56 @@
+// Structure
+#container {
+  margin: 0 auto;
+  width: 980px;
+  > .inner {
+    width: 100%;
+    margin: 10px auto;
+    .clearfix();
+  }
+}
+
+#header {
+  width: 100%;
+  .logo {
+    font-size: 30px;
+  }
+  nav {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    position: relative;
+  }
+}
+nav{
+  .clearfix();
+  ul{
+    li{
+      float: left;
+      a{
+        display: block;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+#sidebar {
+  float: left;
+  padding: 10px;
+  width: 220px;
+  min-height: 500px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+}
+#main {
+  float: right;
+  padding: 10px;
+  width: 710px;
+  min-height: 500px;
+  background: #f7f7f7;
+}
+#footer {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+}

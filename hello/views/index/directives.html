@@ -1,0 +1,90 @@
+<script type="text/ng-template" id="banner.template">
+    <h2>Template: {{attrs.wfiBannerTemplate}}</h2>
+    <div ng-show="attrs.wfiBannerImage" class="promotion-image"><img data-ng-src="{{attrs.wfiBannerImage}}" />
+    </div><span ng-bind-html="attrs.wfiBannerAddress"></span><span ng-bind-html-unsafe="attrs.wfiBannerAddress"></span>
+    <div ng-click="click()" ng-class="{'active': active == true}">click {{cloneText}}</div>
+</script>
+
+<script type="text/ng-template" id="template2">
+    <div ng-show="attrs.wfiBannerImage" class="promotion-image"><img data-ng-src="{{attrs.wfiBannerImage}}" />
+    </div>
+    <h2>Template: {{attrs.wfiBannerTemplate}}</h2><span ng-bind-html="attrs.wfiBannerAddress"></span>
+    <div data-ng-click="click()" data-ng-class="{'active': active == true}">click {{cloneText}}</div><span data-ng-click="expand=!expand" data-ng-class="expand ? 'wfi-minus' : 'wfi-plus'" class="wfi-icon">expand = {{expand}}</span>
+    <p data-ng-show="expand" class="content"><span ng-bind-html="attrs.wfiBannerExpandedText"></span><i data-ng-click="expand = false" class="wfi-btn-close">close</i>
+    </p>
+    <div class="clear-both"></div>
+</script>
+
+<script type="text/ng-template" id="dropdown.html">
+    <div class="wfi-section" id="section-{{name}}">
+      <div data-ng-form="dropdownForm">
+          <div class="row wfi-entry-row top-16" ng-if="!dropdownParent" data-ng-class="{
+        'wfi-chua-click-lan-nao' : isDropdown == null
+        }">
+              <div wfi-label="{{label}}"></div>
+
+
+
+              <div class="col-xs-12 col-sm-6">
+                  <div class="wfi-pie wfi-input-field  ">
+                      <!-- regular select for desktop -->
+                      <div class="bottom-16 col-xs-12 wfi-input-container round-all wfi-pie hidden-touch">
+                          <div class="dropdown-index">
+                            <label data-ng-click="isDropdown = !isDropdown">{{ngModel.text || "default value"}}</label>
+                            <span class="right-icon"><i class="wfi-icon wfi-caret-down"></i>
+                              </span>
+                          </div>
+                          <div class="dropdown-list" data-ng-show="isDropdown">
+                          <div class="dropdown-option">
+                            <input class="search-list" data-ng-model = "strSearch" />
+                            <ul data-ng-show="options.length" data-ng-click="isDropdown = !isDropdown; strSearch = null;">
+                              <li data-ng-click="setData(null);">{{placeholder}}</li>
+                              <li data-ng-repeat="option in options | filter:strSearch" data-ng-click="setData(option);">{{option.text}}</li>
+                            </ul>
+                          </div>
+                          </div>
+                      </div>
+
+                      <!-- regular select for touch, with actual model -->
+                      <!-- <div class="bottom-16 col-xs-12 wfi-input-container round-all wfi-pie visible-touch">
+                          <label class="wfi-input wfi-select">
+                              <select class="no-appearance" wfi-validated-input id="{{name}}" name="{{name}}" data-ng-model="$parent.ngModel" data-ng-options="option.text for option in options" wfi-disabled="{{disabled}}" data-ng-required="{{require ? (isTouch && require) : false}}" wfi-check-validity="{{valid}}">
+                                  <option value=""></option>
+                              </select>
+                              <span class="right-icon"><i class="wfi-icon wfi-caret-down"></i>
+                            </span>
+                          </label>
+                      </div> -->
+                      <div wfi-errors name="{{name}}" required-message="{{requiredMessage}}" error-message="{{errorMessage}}" errors="errors" form="dropdownForm"></div>
+                  </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 wfi-input-help" ng-if="info">
+                  <p data-ng-bind-html="info"></p>
+              </div>
+
+          </div>
+      </div>
+    </div>
+</script>
+
+
+<div data-ng-init="categoryArrTemp={
+          'Jewellery': {'value':'Jewellery', 'text':'Jewellery &amp; Watches'},
+          'GoldSilver': {'value':'GoldSilver', 'text':'Gold or Silver Items'},
+          'PersAcc': {'value':'PersAcc', 'text':'Personal Effects'},
+          'AudioVis': {'value':'AudioVis', 'text':'Electronics &amp; Audio Visual Equipment'},
+          'Sporting': {'value':'Sporting', 'text':'Sporting Equipment'},
+          'Art': {'value':'Art', 'text':'Artwork &amp; Antiques'},
+          'Coll': {'value':'Coll', 'text':'Collections'},
+          'Medical': {'value':'Medical', 'text':'Personal Medical Equipment'}}"></div>
+<div data-ng-init="categoryArr = [
+            {id:'Jewellery', value:'Jewellery', text:'Jewellery &amp; Watches'},
+            {id:'GoldSilver', value:'GoldSilver', text:'Gold or Silver Items'},
+            {id:'PersAcc', value:'PersAcc', text:'Personal Effects'},
+            {id:'AudioVis', value:'AudioVis', text:'Electronics &amp; Audio Visual Equipment'},
+            {id:'Sporting', value:'Sporting', text:'Sporting Equipment'},
+            {id:'Art', value:'Art', text:'Artwork &amp; Antiques'},
+            {id:'Coll', value:'Coll', text:'Collections'},
+            {id:'Medical', value:'Medical', text:'Personal Medical Equipment'}]"></div>
+
+<div class="wfi-section ng-isolate-scope ng-pristine ng-valid placeholder" data-ng-class="{'wfi-chuaclick' : isDropdown}" id="section-category" wfi-dropdown="" ng-model="data.cover.category" data="data" form="form" errors="errors" name="category" valid="true" label="Category" placeholder="category placeholder" required-message="Please enter" data-error-message="Invalid entry" options="categoryArr" placeholder="option select" required="required"></div>

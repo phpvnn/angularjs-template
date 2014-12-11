@@ -1,0 +1,133 @@
+.not-found{
+  min-height: 400px;
+  padding: 20px;
+  font-size: 20px;
+}
+.box-title{
+  position:relative;
+  display:block;
+  margin:20px 0 20px;
+  border-bottom:4px solid @tab-bgcolor;
+  h1, h2{
+    font-size:22px;
+    line-height: 24px;
+    font-weight:normal;
+    letter-spacing:1px;
+    display:inline-block;
+    padding:4px 10px 6px 0;
+    color:@tab-bgcolor;
+    position:relative;
+    &::before{
+      position:absolute;
+      width:100%;
+      height:4px;
+      content: " ";
+      left:0;
+      bottom:-4px;
+      background: @main-bgcolor;
+
+    }
+  }
+}
+
+.description{
+  .content{
+    overflow: hidden;
+    @media only screen and (min-width : @screen-xs){
+      padding: 15px;
+      border:1px solid @main-bgcolor;
+      overflow: hidden;
+    }
+  }
+}
+
+.news{
+  .item{
+    padding: 8px 0;
+    .img{
+      width: 160px;
+      float: left;
+      margin-right: 10px;
+      overflow: hidden;
+      transition: width .25s ease .1s;
+      img{
+        border: none;
+        width: 100%;
+      }
+      @media only screen and (min-width : @screen-xs){
+        width: 200px;
+      }
+    }
+    .info
+    {
+      .title{
+        font-size: 16px;
+        display: block;
+        padding:0 0 4px;
+      }
+      .view-more{
+        display: block;
+        text-align: right;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.list-phone{
+  padding-left: 60px;
+  position: relative;
+  &::before{
+      content: "Q";
+      font-family:@font-family-icon;
+      font-size: 60px;
+      width:30px;
+      text-align: center;
+      height:40px;
+      position:absolute;
+      left:0;
+      top:50%;
+      margin-top: 6px;
+      margin-left: -10px;
+      color: red;
+    }
+}
+
+
+.wfi-input-container {
+  position: relative;
+
+  .dropdown-index {
+    padding: 5px;
+    label {
+      display: block;
+      padding: 5px 10px;
+    }
+  }
+  .dropdown-list {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+        .dropdown-option {
+            border: 2px solid #e5e5e5;
+        border-radius: 0 0 6px 6px;
+            background-color:#FFFFFF;
+        }
+    input {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    ul {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    ul li {
+      display: block;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
+}
