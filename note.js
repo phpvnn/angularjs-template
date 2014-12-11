@@ -34,7 +34,7 @@ if($globalPassword.length){
 
 
 //Detect IE
-if(navigator.appName.indexOf("Internet Explorer")!=-1){     //yeah, he's using IE
+if(navigator.appName.indexOf("Internet Explorer")!=-1){     //yeah, he's using IE //abcdef
     var badBrowser=(
         navigator.appVersion.indexOf("MSIE 9")==-1 &&   //v9 is ok
         navigator.appVersion.indexOf("MSIE 1")==-1  //v10, 11, 12, etc. is fine too
